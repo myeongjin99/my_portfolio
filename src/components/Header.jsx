@@ -50,20 +50,18 @@ const HeaderContainer = styled.div`
   height: 70px;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
   padding: 0px 40px 0px 40px;
   @media screen and (max-width: 600px) {
     display: flex;
-    /* flex-direction: column; */
   }
 `;
 
 const Logo = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   font-family: "ChosunGs";
   font-size: 23px;
   font-weight: 500;
+  color: white;
 `;
 
 const Menu = styled.img`
@@ -71,8 +69,8 @@ const Menu = styled.img`
   height: 30px;
   cursor: pointer;
 `;
+
 const CategoryContainer = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   gap: 20px;
   align-items: center;
@@ -91,10 +89,10 @@ const CategoryContainer = styled.div`
 `;
 
 const Category = styled.div`
-  /* border: 1px solid blue; */
   font-family: "ChosunGs";
   font-size: 18px;
   font-weight: 500;
+  color: white;
 `;
 
 export default Header;
