@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import menu from "../assets/images/category.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleReSize = () => {
@@ -15,12 +18,31 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleReSize);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const menuOnclick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
     <HeaderContainer>
-      <Logo>JINI'S WEBFOLIO</Logo>
+      <Logo
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        JINI'S WEBFOLIO
+      </Logo>
       {isMobile ? (
         <div>
           <Menu src={menu} alt="" onClick={menuOnclick} />
@@ -46,11 +68,15 @@ const Header = () => {
 };
 
 const HeaderContainer = styled.div`
+  position: sticky;
+  top: 0;
   display: flex;
   height: 70px;
   justify-content: space-between;
   align-items: center;
   padding: 0px 40px 0px 40px;
+  background-color: ${(props) => (props.isScrolled ? "black" : "transparent")};
+  z-index: 1000;
   @media screen and (max-width: 600px) {
     display: flex;
   }
@@ -62,6 +88,7 @@ const Logo = styled.div`
   font-size: 23px;
   font-weight: 500;
   color: white;
+  cursor: pointer;
 `;
 
 const Menu = styled.img`
@@ -93,6 +120,7 @@ const Category = styled.div`
   font-size: 18px;
   font-weight: 500;
   color: white;
+  cursor: pointer;
 `;
 
 export default Header;
