@@ -1,43 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import image1 from "../assets/images/first.png";
 import image2 from "../assets/images/second.png";
+import { LeftArrow, RightArrow } from "./Results";
 
 const images = [image1, image2];
 
 const ImageSlide = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  // 다음 버튼시 index 1 증가
-  // 다음 이미지로 이동
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+
+    return () => clearInterval(interval); // 클리어 필요
+  }, []);
+
   const nextSlide = () => {
     setActiveIndex((activeIndex + 1) % images.length);
   };
 
-  // 이전 이미지로 이동
   const prevSlide = () => {
     setActiveIndex((activeIndex - 1 + images.length) % images.length);
   };
 
   return (
     <ImageSlideContainer>
-      <ImageContainer>
-        <img src={images[activeIndex]} alt={`Slide ${activeIndex}`} />
-      </ImageContainer>
-      <div>
-        <button onClick={prevSlide}>이전</button>
-        <button onClick={nextSlide}>다음</button>
-      </div>
+      <ImageBoxContainer>
+        <LeftArrow onClick={prevSlide}></LeftArrow>
+        <ImageContainer>
+          <img src={images[activeIndex]} alt={`Slide ${activeIndex}`} />
+        </ImageContainer>
+        <RightArrow onClick={nextSlide}></RightArrow>
+      </ImageBoxContainer>
     </ImageSlideContainer>
   );
 };
 
 const ImageSlideContainer = styled.div`
   width: 100%;
-  height: 600px;
+  margin-top: 30px;
 `;
-const ImageContainer = styled.div`
-  width: 100%;
-  height: 600px;
-  /* border: 1px solid black; */
+
+const ImageBoxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
+const ImageContainer = styled.div``;
 export default ImageSlide;

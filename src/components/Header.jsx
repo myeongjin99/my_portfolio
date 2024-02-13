@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import menu from "../assets/images/category.png";
+import first from "../assets/images/second.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,6 +69,7 @@ const Header = () => {
 };
 
 const HeaderContainer = styled.div`
+  background-image: url(${first});
   position: sticky;
   top: 0;
   display: flex;
@@ -101,7 +103,9 @@ const CategoryContainer = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
+
   @media screen and (max-width: 768px) {
+    background-color: white;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -121,6 +125,9 @@ const Category = styled.div`
   font-weight: 500;
   color: white;
   cursor: pointer;
+  @media screen and (max-width: 768px) {
+    color: black;
+  }
 `;
 
 export default Header;

@@ -29,4 +29,5 @@ const Contents = styled.div`
   margin: 30px 0px 70px 0px;
   line-height: 30px;
 `;
+
 export default AboutMe;
