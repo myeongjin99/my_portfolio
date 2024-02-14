@@ -168,6 +168,12 @@ const Category = styled.div`
 
 const IntroduceContainer = styled.div`
   margin-left: 150px;
+  @media screen and (max-width: 600px) {
+    border: 1px solid white;
+    width: 500px;
+    margin-left: 0;
+    margin: 0 auto;
+  }
 `;
 
 const Introduce = styled.div`
@@ -190,12 +196,14 @@ const Introduce = styled.div`
       opacity: 1; /* 투명도 1 */
     }
   }
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+  }
 `;
 
 const Name = styled.span`
   position: relative;
   font-size: 45px;
-
   &::after {
     content: "";
     position: absolute;
@@ -204,6 +212,9 @@ const Name = styled.span`
     width: 100%; /* 텍스트 너비만큼 밑줄 길이 설정 */
     height: 6px; /* 밑줄의 두께 설정 */
     background-color: #96bbf1bc; /* 원하는 색상 설정 */
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 28px;
   }
 `;
 
@@ -224,6 +235,10 @@ const IntroduceContents = styled.div`
       transform: translateY(0);
       opacity: 1; /* 투명도 1 */
     }
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+    margin-left: 0;
   }
 `;
 export default Header;

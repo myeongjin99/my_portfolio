@@ -10,7 +10,7 @@ const MainPage = () => {
   return (
     <div>
       <Header />
-      <ImageSlide />
+      {/* <ImageSlide /> */}
       <AboutMe />
       <Results />
       <Stacks />
