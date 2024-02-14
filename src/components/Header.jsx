@@ -66,10 +66,18 @@ const Header = () => {
           </CategoryContainer>
         )}
       </HeaderBoxContainer>
-      <Introduce>
-        기록을 좋아하는 <Name>서명진</Name>입니다.
-      </Introduce>
-      <IntroduceContents></IntroduceContents>
+      <IntroduceContainer>
+        <Introduce>
+          기록을 좋아하는 <Name>서명진</Name>입니다.
+        </Introduce>
+        <IntroduceContents>
+          프론트엔드 개발자를 희망하고 있습니다.
+          <br />
+          기록하는 것을 좋아해 학습한 것을 기록하고 있습니다.
+          <br />
+          더불어 소통하는 것도 좋아합니다!
+        </IntroduceContents>
+      </IntroduceContainer>
     </HeaderContainer>
   );
 };
@@ -158,18 +166,18 @@ const Category = styled.div`
   }
 `;
 
+const IntroduceContainer = styled.div`
+  margin-left: 150px;
+`;
+
 const Introduce = styled.div`
   color: white;
   font-family: "GongGothicMedium";
   letter-spacing: 2.5px;
-  font-size: 30px;
-  border: 1px solid black;
-  width: 500px;
-  height: 50px;
+  font-size: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   margin-top: 200px;
   animation: slideIn 1s ease forwards; /* slideIn 애니메이션 적용 */
   @keyframes slideIn {
@@ -186,7 +194,7 @@ const Introduce = styled.div`
 
 const Name = styled.span`
   position: relative;
-  font-size: 38px;
+  font-size: 45px;
 
   &::after {
     content: "";
@@ -194,10 +202,28 @@ const Name = styled.span`
     left: 0;
     bottom: -2px; /* 밑줄의 위치 조절 */
     width: 100%; /* 텍스트 너비만큼 밑줄 길이 설정 */
-    height: 4px; /* 밑줄의 두께 설정 */
-    background-color: yellow; /* 원하는 색상 설정 */
+    height: 6px; /* 밑줄의 두께 설정 */
+    background-color: #96bbf1bc; /* 원하는 색상 설정 */
   }
 `;
 
-const IntroduceContents = styled.div``;
+const IntroduceContents = styled.div`
+  font-family: "GongGothicMedium";
+  line-height: 40px;
+  color: white;
+  margin-top: 40px;
+  margin-left: 250px;
+  font-size: 20px;
+  animation: slideIn 3s ease forwards; /* slideIn 애니메이션 적용 */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1; /* 투명도 1 */
+    }
+  }
+`;
 export default Header;
