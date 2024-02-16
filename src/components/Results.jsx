@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import peeppo from "../assets/images/PEEPPO.png";
-import first from "../assets/images/instagram.jpg";
-import second from "../assets/images/tistory.png";
 import { Title } from "./AboutMe";
+import ResultModal from "./ResultModal";
 
 const images = [peeppo, peeppo, peeppo];
 
 const Results = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleNextImage = () => {
     setSelectedImageIndex((prevIndex) =>
@@ -20,7 +20,9 @@ const Results = () => {
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
-
+  const modalOnclick = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <ResultContainer>
       <Title>Result</Title>
@@ -33,8 +35,15 @@ const Results = () => {
               src={image}
               alt={`Image ${index + 1}`}
               isSelected={selectedImageIndex === index}
+              onClick={modalOnclick}
             />
           ))}
+          {isModalOpen && (
+            <ResultModal
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+            />
+          )}
         </ImageContainer>
         <RightArrow onClick={handleNextImage} />
       </Container>
