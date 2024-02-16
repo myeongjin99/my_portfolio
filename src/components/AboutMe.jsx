@@ -8,6 +8,7 @@ const AboutMe = () => {
       <Contents>
         프론트엔드 개발자 서명진입니다. <br />
         저는 사용자 경험을 중시하고, 직관적이고 효율적인 웹사이트를 만들기 위해
+        <br />
         끊임없이 노력하고 있습니다.
       </Contents>
     </AboutMeContainer>

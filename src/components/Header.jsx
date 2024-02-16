@@ -51,7 +51,7 @@ const Header = () => {
           </div>
         ) : (
           <CategoryContainer>
-            <Category>ABOUT ME</Category>
+            <Category >ABOUT ME</Category>
             <Category>RESULT</Category>
             <Category>STACKS</Category>
             <Category>SNS</Category>

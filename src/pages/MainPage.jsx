@@ -4,14 +4,14 @@ import AboutMe from "../components/AboutMe";
 import Results from "../components/Results";
 import Stacks from "../components/Stacks";
 import SNS from "../components/SNS";
-import ImageSlide from "../components/ImageSlide";
+import Work from "../components/Work";
 
 const MainPage = () => {
   return (
     <div>
       <Header />
-      {/* <ImageSlide /> */}
       <AboutMe />
+      <Work />
       <Results />
       <Stacks />
       <SNS />
