@@ -13,7 +13,7 @@ import css from "../assets/images/CSS.png";
 
 const Stacks = () => {
   return (
-    <>
+    <StacksContainer>
       <Title>Stacks</Title>
       <StackLogoContainer>
         <LogosContainer>
@@ -59,10 +59,13 @@ const Stacks = () => {
           </LogoContainer>
         </LogosContainer>
       </StackLogoContainer>
-    </>
+    </StacksContainer>
   );
 };
-
+const StacksContainer = styled.div`
+  background-color: #f8f9fa;
+  padding: 0px 0px 30px 0px;
+`;
 const StackLogoContainer = styled.div`
   margin-bottom: 70px;
 `;

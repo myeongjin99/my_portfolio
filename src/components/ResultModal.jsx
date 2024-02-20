@@ -54,6 +54,12 @@ const ModalBck = styled.div`
   width: 500px;
   height: 600px;
   z-index: 999;
+  @media screen and (max-width: 600px) {
+    font-family: "ChosunGs";
+    width: 300px;
+    height: 400px;
+    font-size: 11px;
+  }
 `;
 
 const CancelButton = styled.div`

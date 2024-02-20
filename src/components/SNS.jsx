@@ -32,7 +32,6 @@ const SNS = () => {
   );
 };
 const SnsContainer = styled.div`
-  background-color: #f8f9fa;
   padding: 0px 0px 90px 0px;
 `;
 const Email = styled.div`
