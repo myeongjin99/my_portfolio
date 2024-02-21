@@ -57,8 +57,7 @@ const ModalBck = styled.div`
   @media screen and (max-width: 600px) {
     font-family: "ChosunGs";
     width: 300px;
-    height: 400px;
-    font-size: 11px;
+    height: 550px;
   }
 `;
 
@@ -69,18 +68,29 @@ const CancelButton = styled.div`
   cursor: pointer;
   position: absolute;
   right: 0;
+  @media screen and (max-width: 600px) {
+    width: 10px;
+    height: 10px;
+    margin: 10px 10px 0px 0px;
+  }
 `;
 
 const Title = styled.div`
   font-family: "GongGothicMedium";
   font-size: 23px;
   margin-top: 40px;
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+  }
 `;
 
 const SubTitle = styled.div`
   font-family: "GongGothicMedium";
   font-size: 17px;
   margin-top: 30px;
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const Content = styled.div`
@@ -88,5 +98,8 @@ const Content = styled.div`
   font-size: 15px;
   margin-top: 20px;
   line-height: 20px;
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
 `;
 export default ResultModal;
