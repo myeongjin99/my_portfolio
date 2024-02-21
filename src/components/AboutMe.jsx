@@ -23,12 +23,18 @@ export const Title = styled.div`
   padding: 70px 0px 30px 0px;
   font-size: 35px;
   font-family: "GongGothicMedium";
+  @media screen and (max-width: 600px) {
+    font-size: 30px;
+  }
 `;
 
 const Contents = styled.div`
   font-family: "GongGothicMedium";
   margin: 30px 0px 70px 0px;
   line-height: 30px;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 export default AboutMe;

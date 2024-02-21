@@ -28,5 +28,8 @@ const Contents = styled.div`
   font-family: "GongGothicMedium";
   margin: 30px 0px 70px 0px;
   line-height: 30px;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 export default Work;
