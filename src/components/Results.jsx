@@ -76,6 +76,11 @@ export const LeftArrow = styled.div`
   border-top: 5px solid gray; /* 선 두께 */
   border-right: 5px solid gray; /* 선 두께 */
   transform: rotate(225deg); /* 각도 */
+  @media screen and (max-width: 600px) {
+    width: 15px;
+    height: 15px;
+    margin-right: 30px;
+  }
 `;
 
 export const RightArrow = styled.div`
@@ -87,6 +92,11 @@ export const RightArrow = styled.div`
   border-top: 5px solid gray; /* 선 두께 */
   border-right: 5px solid gray; /* 선 두께 */
   transform: rotate(45deg); /* 각도 */
+  @media screen and (max-width: 600px) {
+    width: 15px;
+    height: 15px;
+    margin-left: 30px;
+  }
 `;
 
 const Image = styled.img`
@@ -96,5 +106,10 @@ const Image = styled.img`
   opacity: ${(props) => (props.isSelected ? 1 : 0.4)};
   transition: all 0.7s ease;
   cursor: pointer;
+  @media screen and (max-width: 600px) {
+    max-width: ${(props) => (props.isSelected ? "60%" : "70px")};
+    max-height: ${(props) => (props.isSelected ? "60%" : "70px")};
+  }
 `;
+
 export default Results;
