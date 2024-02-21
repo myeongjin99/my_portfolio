@@ -38,10 +38,17 @@ const Email = styled.div`
   font-family: "GongGothicMedium";
   color: gray;
   margin-bottom: 50px;
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+  }
 `;
 const Logo = styled.img`
   width: 150px;
   height: 150px;
+  @media screen and (max-width: 600px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 const Container = styled.div`
