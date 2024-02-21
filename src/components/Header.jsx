@@ -47,11 +47,11 @@ const Header = () => {
         </Logo>
         {isMobile ? (
           <div>
-            <Menu onClick={menuOnclick}>menu</Menu>
+            <Menu onClick={menuOnclick}>MENU</Menu>
           </div>
         ) : (
           <CategoryContainer>
-            <Category >ABOUT ME</Category>
+            <Category>ABOUT ME</Category>
             <Category>RESULT</Category>
             <Category>STACKS</Category>
             <Category>SNS</Category>
@@ -127,12 +127,14 @@ const Menu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
   @media screen and (max-width: 600px) {
     display: flex;
     align-items: center;
     color: white;
     border: 1px solid white;
     font-family: "ChosunGs";
+    font-size: 13px;
   }
 `;
 
@@ -163,6 +165,8 @@ const Category = styled.div`
     color: white;
     font-size: 15px;
     display: flex;
+    position: relative;
+    left: 45px;
   }
 `;
 
