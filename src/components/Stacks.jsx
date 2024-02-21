@@ -80,10 +80,17 @@ const LogoContainer = styled.div``;
 const StackLogo = styled.img`
   width: 100px;
   height: 100px;
+  @media screen and (max-width: 600px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const Stack = styled.div`
   font-family: "GongGothicMedium";
   margin-top: 10px;
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 export default Stacks;
