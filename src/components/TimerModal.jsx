@@ -5,8 +5,8 @@ import {
   ModalBck,
   ModalContainer,
   SubTitle,
+  Title,
 } from "./ResultModal";
-import { Title } from "./AboutMe";
 
 const TimerModal = ({ isModalOpen, setIsModalOpen }) => {
   const cancelOnclick = () => {

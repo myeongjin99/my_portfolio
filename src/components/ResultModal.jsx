@@ -52,12 +52,12 @@ export const ModalBck = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
-  height: 600px;
   z-index: 999;
+  padding: 0px 0px 30px 0px;
   @media screen and (max-width: 600px) {
     font-family: "ChosunGs";
     width: 300px;
-    height: 550px;
+    padding: 0px 0px 30px 0px;
   }
 `;
 
@@ -71,7 +71,7 @@ export const CancelButton = styled.div`
   @media screen and (max-width: 600px) {
     width: 10px;
     height: 10px;
-    margin: 10px 10px 0px 0px;
+    margin: 15px 10px 0px 0px;
   }
 `;
 
