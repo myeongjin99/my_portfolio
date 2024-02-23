@@ -99,20 +99,23 @@ const Header = () => {
             <Category
               onClick={() => {
                 scrollToSection("about me");
-              }}
-            >
-              WORK
-            </Category>
-            <Category
-              onClick={() => {
-                scrollToSection("work");
+                setIsMenuOpen(false);
               }}
             >
               ABOUT ME
             </Category>
             <Category
               onClick={() => {
+                scrollToSection("work");
+                setIsMenuOpen(false);
+              }}
+            >
+              WORK
+            </Category>
+            <Category
+              onClick={() => {
                 scrollToSection("result");
+                setIsMenuOpen(false);
               }}
             >
               RESULT
@@ -120,6 +123,7 @@ const Header = () => {
             <Category
               onClick={() => {
                 scrollToSection("stacks");
+                setIsMenuOpen(false);
               }}
             >
               STACKS
@@ -127,6 +131,7 @@ const Header = () => {
             <Category
               onClick={() => {
                 scrollToSection("sns");
+                setIsMenuOpen(false);
               }}
             >
               SNS
@@ -157,8 +162,8 @@ const HeaderContainer = styled.div`
   @media screen and (max-width: 600px) {
     display: flex;
     background-color: black;
-    background-size: 160%;
-    height: 600px;
+    background-size: 170%;
+    height: 650px;
   }
 `;
 
@@ -221,7 +226,7 @@ const CategoryContainer = styled.div`
     position: absolute;
     width: 100%;
     top: 60px;
-    padding: 10px 0px 10px 0px;
+    padding: 20px 0px 20px 0px;
   }
 `;
 
