@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import peeppo from "../assets/images/PEEPPO.png";
+import pomodoro from "../assets/images/pomodoro.png";
 import { Title } from "./AboutMe";
 import ResultModal from "./ResultModal";
+import TimerModal from "./TimerModal";
 
-const images = [peeppo, peeppo, peeppo];
+const images = [peeppo, pomodoro, peeppo];
 
 const Results = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedModalType, setSelectedModalType] = useState(null);
 
   const handleNextImage = () => {
     setSelectedImageIndex((prevIndex) =>
@@ -20,9 +23,7 @@ const Results = () => {
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
-  const modalOnclick = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+
   return (
     <ResultContainer id="result">
       <Title>Result</Title>
@@ -35,15 +36,26 @@ const Results = () => {
               src={image}
               alt={`Image ${index + 1}`}
               isSelected={selectedImageIndex === index}
-              onClick={modalOnclick}
+              onClick={() => {
+                setSelectedModalType(index === 0 ? "peeppo" : "pomodoro"); // 이미지에 따라 모달 타입 설정
+                setIsModalOpen(!isModalOpen); // 모달 열기
+              }}
             />
           ))}
-          {isModalOpen && (
-            <ResultModal
-              isModalOpen={isModalOpen}
-              setIsModalOpen={setIsModalOpen}
-            />
-          )}
+          {isModalOpen &&
+            selectedModalType === "peeppo" && ( // peeppo 모달이 선택되었을 때
+              <ResultModal
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+              />
+            )}
+          {isModalOpen &&
+            selectedModalType === "pomodoro" && ( // pomodoro 모달이 선택되었을 때
+              <TimerModal
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+              />
+            )}
         </ImageContainer>
         <RightArrow onClick={handleNextImage} />
       </Container>

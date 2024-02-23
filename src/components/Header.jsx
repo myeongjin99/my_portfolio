@@ -89,10 +89,34 @@ const Header = () => {
         )}
         {isMobile && isMenuOpen && (
           <CategoryContainer>
-            <Category>ABOUT ME</Category>
-            <Category>RESULT</Category>
-            <Category>STACKS</Category>
-            <Category>SNS</Category>
+            <Category
+              onClick={() => {
+                scrollToSection("about me");
+              }}
+            >
+              ABOUT ME
+            </Category>
+            <Category
+              onClick={() => {
+                scrollToSection("result");
+              }}
+            >
+              RESULT
+            </Category>
+            <Category
+              onClick={() => {
+                scrollToSection("stacks");
+              }}
+            >
+              STACKS
+            </Category>
+            <Category
+              onClick={() => {
+                scrollToSection("sns");
+              }}
+            >
+              SNS
+            </Category>
           </CategoryContainer>
         )}
       </HeaderBoxContainer>

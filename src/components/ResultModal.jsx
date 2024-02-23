@@ -8,7 +8,7 @@ const ResultModal = ({ isModalOpen, setIsModalOpen }) => {
   return (
     <>
       <ModalContainer />
-      <div>
+      <div id="result">
         <ModalBck>
           <CancelButton onClick={cancelOnclick}>X</CancelButton>
           <Title>물물교환 거래 플랫폼</Title>
@@ -35,7 +35,7 @@ const ResultModal = ({ isModalOpen, setIsModalOpen }) => {
   );
 };
 
-const ModalContainer = styled.div`
+export const ModalContainer = styled.div`
   background-color: gray;
   position: fixed;
   top: 0px;
@@ -45,7 +45,7 @@ const ModalContainer = styled.div`
   opacity: 50%;
 `;
 
-const ModalBck = styled.div`
+export const ModalBck = styled.div`
   background-color: rgb(255, 255, 255);
   position: fixed;
   top: calc(50% + 50px);
@@ -61,7 +61,7 @@ const ModalBck = styled.div`
   }
 `;
 
-const CancelButton = styled.div`
+export const CancelButton = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -75,7 +75,7 @@ const CancelButton = styled.div`
   }
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   font-family: "GongGothicMedium";
   font-size: 23px;
   margin-top: 40px;
@@ -84,7 +84,7 @@ const Title = styled.div`
   }
 `;
 
-const SubTitle = styled.div`
+export const SubTitle = styled.div`
   font-family: "GongGothicMedium";
   font-size: 17px;
   margin-top: 30px;
@@ -93,7 +93,7 @@ const SubTitle = styled.div`
   }
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   font-family: "GongGothicMedium";
   font-size: 15px;
   margin-top: 20px;
