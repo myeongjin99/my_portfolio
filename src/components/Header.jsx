@@ -66,6 +66,13 @@ const Header = () => {
             </Category>
             <Category
               onClick={() => {
+                scrollToSection("about me");
+              }}
+            >
+              WORK
+            </Category>
+            <Category
+              onClick={() => {
                 scrollToSection("result");
               }}
             >
@@ -92,6 +99,13 @@ const Header = () => {
             <Category
               onClick={() => {
                 scrollToSection("about me");
+              }}
+            >
+              WORK
+            </Category>
+            <Category
+              onClick={() => {
+                scrollToSection("work");
               }}
             >
               ABOUT ME
@@ -143,6 +157,8 @@ const HeaderContainer = styled.div`
   @media screen and (max-width: 600px) {
     display: flex;
     background-color: black;
+    background-size: 160%;
+    height: 600px;
   }
 `;
 
