@@ -71,6 +71,9 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 600px) {
+    padding: 0px 20px 0px 20px;
+  }
 `;
 
 const Container = styled.div`
@@ -89,8 +92,8 @@ export const LeftArrow = styled.div`
   border-right: 5px solid gray; /* 선 두께 */
   transform: rotate(225deg); /* 각도 */
   @media screen and (max-width: 600px) {
-    width: 20px; /* 적절한 크기 조정 */
-    height: 20px; /* 적절한 크기 조정 */
+    width: 15px; /* 적절한 크기 조정 */
+    height: 10px; /* 적절한 크기 조정 */
     border-top-width: 3px; /* 적절한 선 두께 조정 */
     border-right-width: 3px; /* 적절한 선 두께 조정 */
     margin: 0px 20px 0px 20px;
@@ -107,8 +110,8 @@ export const RightArrow = styled.div`
   border-right: 5px solid gray; /* 선 두께 */
   transform: rotate(45deg); /* 각도 */
   @media screen and (max-width: 600px) {
-    width: 20px; /* 적절한 크기 조정 */
-    height: 20px; /* 적절한 크기 조정 */
+    width: 15px; /* 적절한 크기 조정 */
+    height: 10px; /* 적절한 크기 조정 */
     border-top-width: 3px; /* 적절한 선 두께 조정 */
     border-right-width: 3px; /* 적절한 선 두께 조정 */
     margin: 0px 20px 0px 20px;
