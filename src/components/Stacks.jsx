@@ -13,7 +13,7 @@ import css from "../assets/images/CSS.png";
 
 const Stacks = () => {
   return (
-    <StacksContainer>
+    <StacksContainer id="stacks">
       <Title>Stacks</Title>
       <StackLogoContainer>
         <LogosContainer>

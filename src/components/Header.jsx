@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import menu from "../assets/images/category.png";
 import first from "../assets/images/second.png";
 
 const Header = () => {
@@ -35,6 +34,13 @@ const Header = () => {
   const menuOnclick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <HeaderContainer>
       <HeaderBoxContainer isScrolled={isScrolled}>
@@ -51,10 +57,34 @@ const Header = () => {
           </div>
         ) : (
           <CategoryContainer>
-            <Category>ABOUT ME</Category>
-            <Category>RESULT</Category>
-            <Category>STACKS</Category>
-            <Category>SNS</Category>
+            <Category
+              onClick={() => {
+                scrollToSection("about me");
+              }}
+            >
+              ABOUT ME
+            </Category>
+            <Category
+              onClick={() => {
+                scrollToSection("result");
+              }}
+            >
+              RESULT
+            </Category>
+            <Category
+              onClick={() => {
+                scrollToSection("stacks");
+              }}
+            >
+              STACKS
+            </Category>
+            <Category
+              onClick={() => {
+                scrollToSection("sns");
+              }}
+            >
+              SNS
+            </Category>
           </CategoryContainer>
         )}
         {isMobile && isMenuOpen && (

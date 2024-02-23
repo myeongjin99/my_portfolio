@@ -4,7 +4,7 @@ import { Title } from "./AboutMe";
 
 const Work = () => {
   return (
-    <WorkContainer>
+    <WorkContainer id="work">
       <Title>WORK</Title>
       <Contents>
         우경정보기술(2021.07 ~ 2021.12, 6개월)

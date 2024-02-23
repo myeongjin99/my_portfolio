@@ -8,7 +8,7 @@ import { Stack } from "./Stacks";
 
 const SNS = () => {
   return (
-    <SnsContainer>
+    <SnsContainer id="sns">
       <Title>SNS</Title>
       <Email>E-MAIL : seomyeongjin99@gmail.com</Email>
       <Container>

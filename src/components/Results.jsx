@@ -24,7 +24,7 @@ const Results = () => {
     setIsModalOpen(!isModalOpen);
   };
   return (
-    <ResultContainer>
+    <ResultContainer id="result">
       <Title>Result</Title>
       <Container>
         <LeftArrow onClick={handlePreviousImage} />

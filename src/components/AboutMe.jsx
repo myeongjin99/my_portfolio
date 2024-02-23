@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const AboutMe = () => {
   return (
-    <AboutMeContainer>
+    <AboutMeContainer id="about me">
       <Title>ABOUT ME</Title>
       <Contents>
         프론트엔드 개발자 서명진입니다. <br />
