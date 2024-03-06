@@ -7,6 +7,7 @@ import {
   SubTitle,
   Title,
 } from "./ResultModal";
+import styled from "styled-components";
 
 const TimerModal = ({ isModalOpen, setIsModalOpen }) => {
   const cancelOnclick = () => {
@@ -19,7 +20,11 @@ const TimerModal = ({ isModalOpen, setIsModalOpen }) => {
       <div>
         <ModalBck>
           <CancelButton onClick={cancelOnclick}>X</CancelButton>
+
           <Title>뽀모도로 타이머</Title>
+          <Link href="http://pomodorosite.s3-website.ap-northeast-2.amazonaws.com/">
+            Site Link
+          </Link>
           <SubTitle>💻 서비스 개요</SubTitle>
           <Content>타이머를 설정해서 공부시간 조절하기 & 할일 기록하기</Content>
           <SubTitle>📆 프로젝트 기간</SubTitle>
@@ -37,4 +42,9 @@ const TimerModal = ({ isModalOpen, setIsModalOpen }) => {
   );
 };
 
+const Link = styled.a`
+  font-family: "GongGothicMedium";
+  text-decoration: none;
+  color: #fda6e3;
+`;
 export default TimerModal;

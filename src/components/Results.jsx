@@ -6,7 +6,7 @@ import { Title } from "./AboutMe";
 import ResultModal from "./ResultModal";
 import TimerModal from "./TimerModal";
 
-const images = [peeppo, pomodoro, peeppo];
+const images = [peeppo, pomodoro];
 
 const Results = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);

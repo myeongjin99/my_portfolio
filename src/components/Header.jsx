@@ -66,7 +66,7 @@ const Header = () => {
             </Category>
             <Category
               onClick={() => {
-                scrollToSection("about me");
+                scrollToSection("work");
               }}
             >
               WORK

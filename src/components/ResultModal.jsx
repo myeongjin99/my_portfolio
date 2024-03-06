@@ -12,6 +12,7 @@ const ResultModal = ({ isModalOpen, setIsModalOpen }) => {
         <ModalBck>
           <CancelButton onClick={cancelOnclick}>X</CancelButton>
           <Title>물물교환 거래 플랫폼</Title>
+          <Link href="https://peeppo.site/">Site Link</Link>
           <SubTitle>💻 서비스 개요</SubTitle>
           <Content>
             유저들의 물건이 화폐가 되어 유저들간의 물물교환이 가능하고 <br />더
@@ -22,7 +23,10 @@ const ResultModal = ({ isModalOpen, setIsModalOpen }) => {
           <SubTitle>📆 프로젝트 기간</SubTitle>
           <Content>2023 07.28 ~ 2023.09.08</Content>
           <SubTitle>🙆‍♀️ 참여부분</SubTitle>
-          <Content>로그인, 회원가입, </Content>
+          <Content>
+            로그인, 회원가입, Header, Navbar,
+            <br /> 교환요청 및 경매현황 페이지
+          </Content>
           <SubTitle>🛠 활용기술</SubTitle>
           <Content>
             typescript, javascript,html, css, <br />
@@ -82,6 +86,12 @@ export const Title = styled.div`
   @media screen and (max-width: 600px) {
     font-size: 15px;
   }
+`;
+
+const Link = styled.a`
+  font-family: "GongGothicMedium";
+  text-decoration: none;
+  color: orange;
 `;
 
 export const SubTitle = styled.div`
