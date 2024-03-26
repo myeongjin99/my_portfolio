@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import peeppo from "../assets/images/PEEPPO.png";
 import pomodoro from "../assets/images/pomodoro.png";
+import weather from "../assets/images/weather.png";
 import { Title } from "./AboutMe";
 import ResultModal from "./ResultModal";
 import TimerModal from "./TimerModal";
+import WeatherApiModal from "./WeatherApiModal";
 
-const images = [peeppo, pomodoro];
+const images = [peeppo, pomodoro, weather];
 
 const Results = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -37,25 +39,32 @@ const Results = () => {
               alt={`Image ${index + 1}`}
               isSelected={selectedImageIndex === index}
               onClick={() => {
-                setSelectedModalType(index === 0 ? "peeppo" : "pomodoro"); // 이미지에 따라 모달 타입 설정
+                setSelectedModalType(
+                  index === 0 ? "peeppo" : index === 1 ? "pomodoro" : "weather"
+                );
+
                 setIsModalOpen(!isModalOpen); // 모달 열기
               }}
             />
           ))}
-          {isModalOpen &&
-            selectedModalType === "peeppo" && ( // peeppo 모달이 선택되었을 때
-              <ResultModal
-                isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}
-              />
-            )}
-          {isModalOpen &&
-            selectedModalType === "pomodoro" && ( // pomodoro 모달이 선택되었을 때
-              <TimerModal
-                isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}
-              />
-            )}
+          {isModalOpen && selectedModalType === "peeppo" && (
+            <ResultModal
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+            />
+          )}
+          {isModalOpen && selectedModalType === "pomodoro" && (
+            <TimerModal
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+            />
+          )}
+          {isModalOpen && selectedModalType === "weather" && (
+            <WeatherApiModal
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+            />
+          )}
         </ImageContainer>
         <RightArrow onClick={handleNextImage} />
       </Container>

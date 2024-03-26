@@ -12,7 +12,6 @@ const ResultModal = ({ isModalOpen, setIsModalOpen }) => {
         <ModalBck>
           <CancelButton onClick={cancelOnclick}>X</CancelButton>
           <Title>물물교환 거래 플랫폼</Title>
-          <Link href="https://peeppo.site/">Site Link</Link>
           <SubTitle>💻 서비스 개요</SubTitle>
           <Content>
             유저들의 물건이 화폐가 되어 유저들간의 물물교환이 가능하고 <br />더
